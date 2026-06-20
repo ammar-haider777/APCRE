@@ -1,0 +1,29 @@
+{
+  "seed": 42,
+  "train_ratio": 0.8,
+  "test_ratio": 0.2,
+  "train": [
+    "isp_violation.py",
+    "generic_stack.py",
+    "shell_injection.py",
+    "data_pipeline.py",
+    "report_builder_bad.py",
+    "hardcoded_creds.py",
+    "insecure_deser.py",
+    "lsp_violation.py",
+    "data_processor_bad.py",
+    "sql_injection_vuln.py",
+    "tight_coupling.py",
+    "cache_bad.py",
+    "sorting_strategy.py",
+    "config_loader_bad.py",
+    "input_validator.py",
+    "god_class.py"
+  ],
+  "test": [
+    "monolith_handler.py",
+    "nested_nightmare.py",
+    "user_repository.py",
+    "event_system.py"
+  ]
+}

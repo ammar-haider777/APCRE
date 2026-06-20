@@ -1,0 +1,2 @@
+LinkedList Singly Structure Verified Successfully!
+Elements: [10, 9, 50]

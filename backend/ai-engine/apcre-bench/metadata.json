@@ -1,0 +1,325 @@
+{
+  "benchmark": "APCRE-Bench",
+  "version": "1.0.0",
+  "description": "Ground-truth annotated Python benchmark corpus for AI code review evaluation.",
+  "total_samples": 20,
+  "categories": {
+    "good": 6,
+    "bad": 6,
+    "security": 4,
+    "design_violations": 4
+  },
+  "samples": [
+    {
+      "filename": "user_repository.py",
+      "category": "good",
+      "expected_class": "good_practice",
+      "cwe_ids": [],
+      "solid_violations": [],
+      "expected_complexity": "low",
+      "tags": [
+        "encapsulation",
+        "type_hints",
+        "docstrings",
+        "SRP"
+      ]
+    },
+    {
+      "filename": "sorting_strategy.py",
+      "category": "good",
+      "expected_class": "good_practice",
+      "cwe_ids": [],
+      "solid_violations": [],
+      "expected_complexity": "medium",
+      "tags": [
+        "strategy_pattern",
+        "OCP",
+        "polymorphism",
+        "docstrings"
+      ]
+    },
+    {
+      "filename": "input_validator.py",
+      "category": "good",
+      "expected_class": "good_practice",
+      "cwe_ids": [],
+      "solid_violations": [],
+      "expected_complexity": "low",
+      "tags": [
+        "SRP",
+        "encapsulation",
+        "regex",
+        "type_hints"
+      ]
+    },
+    {
+      "filename": "event_system.py",
+      "category": "good",
+      "expected_class": "good_practice",
+      "cwe_ids": [],
+      "solid_violations": [],
+      "expected_complexity": "low",
+      "tags": [
+        "observer_pattern",
+        "DIP",
+        "loose_coupling",
+        "docstrings"
+      ]
+    },
+    {
+      "filename": "data_pipeline.py",
+      "category": "good",
+      "expected_class": "good_practice",
+      "cwe_ids": [],
+      "solid_violations": [],
+      "expected_complexity": "low",
+      "tags": [
+        "OCP",
+        "composition",
+        "fluent_api",
+        "type_hints"
+      ]
+    },
+    {
+      "filename": "generic_stack.py",
+      "category": "good",
+      "expected_class": "good_practice",
+      "cwe_ids": [],
+      "solid_violations": [],
+      "expected_complexity": "low",
+      "tags": [
+        "generics",
+        "encapsulation",
+        "error_handling",
+        "docstrings"
+      ]
+    },
+    {
+      "filename": "data_processor_bad.py",
+      "category": "bad",
+      "expected_class": "bad_practice",
+      "cwe_ids": [
+        "CWE-755"
+      ],
+      "solid_violations": [
+        "SRP"
+      ],
+      "expected_complexity": "high",
+      "tags": [
+        "bare_except",
+        "magic_numbers",
+        "global_state",
+        "no_docstrings"
+      ]
+    },
+    {
+      "filename": "monolith_handler.py",
+      "category": "bad",
+      "expected_class": "bad_practice",
+      "cwe_ids": [
+        "CWE-755"
+      ],
+      "solid_violations": [
+        "SRP",
+        "OCP"
+      ],
+      "expected_complexity": "very_high",
+      "tags": [
+        "monolithic",
+        "bare_except",
+        "no_docstrings",
+        "no_context_managers"
+      ]
+    },
+    {
+      "filename": "nested_nightmare.py",
+      "category": "bad",
+      "expected_class": "bad_practice",
+      "cwe_ids": [],
+      "solid_violations": [
+        "SRP"
+      ],
+      "expected_complexity": "very_high",
+      "tags": [
+        "deep_nesting",
+        "global_state",
+        "no_docstrings",
+        "no_type_hints"
+      ]
+    },
+    {
+      "filename": "report_builder_bad.py",
+      "category": "bad",
+      "expected_class": "bad_practice",
+      "cwe_ids": [],
+      "solid_violations": [
+        "SRP",
+        "OCP"
+      ],
+      "expected_complexity": "high",
+      "tags": [
+        "god_function",
+        "global_state",
+        "no_docstrings",
+        "string_concat"
+      ]
+    },
+    {
+      "filename": "cache_bad.py",
+      "category": "bad",
+      "expected_class": "bad_practice",
+      "cwe_ids": [
+        "CWE-755"
+      ],
+      "solid_violations": [
+        "SRP"
+      ],
+      "expected_complexity": "medium",
+      "tags": [
+        "mutable_default",
+        "bare_except",
+        "shadowing",
+        "global_state"
+      ]
+    },
+    {
+      "filename": "config_loader_bad.py",
+      "category": "bad",
+      "expected_class": "bad_practice",
+      "cwe_ids": [],
+      "solid_violations": [
+        "DIP"
+      ],
+      "expected_complexity": "low",
+      "tags": [
+        "hardcoded_paths",
+        "no_error_handling",
+        "no_docstrings",
+        "no_type_hints"
+      ]
+    },
+    {
+      "filename": "sql_injection_vuln.py",
+      "category": "security",
+      "expected_class": "security_flaw",
+      "cwe_ids": [
+        "CWE-89"
+      ],
+      "solid_violations": [],
+      "expected_complexity": "low",
+      "tags": [
+        "sql_injection",
+        "string_formatting",
+        "OWASP_A03"
+      ]
+    },
+    {
+      "filename": "hardcoded_creds.py",
+      "category": "security",
+      "expected_class": "security_flaw",
+      "cwe_ids": [
+        "CWE-798",
+        "CWE-327"
+      ],
+      "solid_violations": [],
+      "expected_complexity": "low",
+      "tags": [
+        "hardcoded_credentials",
+        "weak_crypto",
+        "OWASP_A07"
+      ]
+    },
+    {
+      "filename": "shell_injection.py",
+      "category": "security",
+      "expected_class": "security_flaw",
+      "cwe_ids": [
+        "CWE-78"
+      ],
+      "solid_violations": [],
+      "expected_complexity": "low",
+      "tags": [
+        "shell_injection",
+        "os_system",
+        "OWASP_A03"
+      ]
+    },
+    {
+      "filename": "insecure_deser.py",
+      "category": "security",
+      "expected_class": "security_flaw",
+      "cwe_ids": [
+        "CWE-502",
+        "CWE-489"
+      ],
+      "solid_violations": [],
+      "expected_complexity": "low",
+      "tags": [
+        "insecure_deserialization",
+        "debug_mode",
+        "OWASP_A08"
+      ]
+    },
+    {
+      "filename": "god_class.py",
+      "category": "design_violations",
+      "expected_class": "design_violation",
+      "cwe_ids": [],
+      "solid_violations": [
+        "SRP"
+      ],
+      "expected_complexity": "high",
+      "tags": [
+        "god_class",
+        "SRP_violation",
+        "low_cohesion"
+      ]
+    },
+    {
+      "filename": "tight_coupling.py",
+      "category": "design_violations",
+      "expected_class": "design_violation",
+      "cwe_ids": [],
+      "solid_violations": [
+        "DIP",
+        "OCP"
+      ],
+      "expected_complexity": "medium",
+      "tags": [
+        "tight_coupling",
+        "DIP_violation",
+        "concrete_dependency"
+      ]
+    },
+    {
+      "filename": "lsp_violation.py",
+      "category": "design_violations",
+      "expected_class": "design_violation",
+      "cwe_ids": [],
+      "solid_violations": [
+        "LSP"
+      ],
+      "expected_complexity": "low",
+      "tags": [
+        "LSP_violation",
+        "inheritance_abuse",
+        "contract_breach"
+      ]
+    },
+    {
+      "filename": "isp_violation.py",
+      "category": "design_violations",
+      "expected_class": "design_violation",
+      "cwe_ids": [],
+      "solid_violations": [
+        "ISP"
+      ],
+      "expected_complexity": "medium",
+      "tags": [
+        "ISP_violation",
+        "fat_interface",
+        "NotImplementedError_abuse"
+      ]
+    }
+  ]
+}

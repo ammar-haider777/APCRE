@@ -1,0 +1,2 @@
+Encapsulated OOP and Properties verified!
+Dog: Rex (German Shepherd)

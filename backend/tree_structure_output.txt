@@ -1,0 +1,2 @@
+Binary Search Tree Verified!
+Inorder: [3, 5, 7, 10, 15]

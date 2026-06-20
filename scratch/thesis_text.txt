@@ -1,0 +1,115 @@
+UNIVERSITY OF ENGINEERING AND TECHNOLOGY, TAXILAFACULTY OF TELECOMMUNICATION AND INFORMATION ENGINEERINGSOFTWARE ENGINEERING DEPARTMENT
+Course: Human-Computer Interaction (HCI)
+Instructor: Engr. Maria Andleeb
+Assignment 02: Interactive Design & Usability Evaluation
+Submitted By: Ammar Haider (22-SE-68)
+Project Base: APCRE (Autonomous Private Code Reviewer and Educational Platform)
+---
+Step 01: Requirements, Users, and Initial Ideas
+1.1 Interface / System Requirements
+APCRE is an offline static code reviewer and interactive educational tutoring dashboard. The interface is optimized to guide computer science students through programming tasks without cloud latency or data privacy risks. The user-facing components include:
+•  Monaco Editor Workspace (Left Panel): An industry-standard code editor equipped with dynamic error highlights, code auto-completions, line numbering, and syntax coloring, replicating the look-and-feel of modern desktop IDEs.
+•  Stateful AI Tutoring Panel (Right Panel): A conversational panel providing explanations, concept definitions, and step-by-step algorithm dry-run traces (nested stack visualizers).
+•  Execution & Terminal Console (Bottom Panel): A live terminal output displaying standard compilation outputs and standard error logs in real-time.
+•  Autonomous Click-to-Heal Exception Popup: A card overlay that replaces cryptic error traces with a human-readable explanation and a single-click auto-correct button.
+•  Accessibility Speech Controller: A microphone trigger button in the main toolbar, allowing hands-free voice commands.
+1.2 Users, Context, and Environment
+•  Primary Users: Undergraduate computer science and software engineering students, programming novices, and developers working on proprietary code bases.
+•  Interaction Context: Academic labs, home desks, and remote locations with unstable or absent internet connections.
+•  Special Accessibility Needs:
+•  Students with physical or visual fatigue who benefit from Web Speech voice inputs and read-aloud tutoring reviews.
+•  Low-end consumer hardware environments (CPU-bound operation constraints).
+1.3 Main User Tasks
+•  Task 1 (Static Audit): Writing/pasting code in the editor workspace and viewing compiler style compliance alerts.
+•  Task 2 (Interactive Mentorship): Querying the AI tutor for step-by-step traces of a specific algorithm (e.g., Bubble Sort, LinkedList traversals) to visualize variable state changes.
+•  Task 3 (Voice-Driven Operations): Using the mic to run voice-activated coding operations (e.g. calculation utilities).
+•  Task 4 (Autonomous Debugging): Compiling a script, encountering a traceback error, and clicking the 'Click-to-Heal' prompt to resolve the bug programmatically.
+1.4 System Description
+APCRE is a localized, private software engineering mentor that integrates compilation feedback and lightweight machine learning predictions into a unified, responsive IDE dashboard. The interface acts as a mediator, abstracting the underlying compilers and local LLM tokens into clean, actionable visual indicators.
+1.5 Design Decisions Mapped to HCI Principles & Heuristics
+•  Consistency and Standards (Heuristic 4): Integrating the Monaco Editor codebase matches the user's mental model of VS Code, minimizing the learning curve.
+•  Visibility of System Status (Heuristic 1): The terminal console immediately shows process states (running, compiled, failed), keeping the user informed of background executions.
+•  Help Users Recognize, Diagnose, and Recover from Errors (Heuristic 9): Instead of forcing novices to parse complex standard error dumps, the click-to-heal overlay explains the bug in simple terms and offers an auto-correct option.
+•  Help and Documentation (Heuristic 10): The stateful AI tutor acts as ambient documentation, rendering dry-runs and traces side-by-side with the editor.
+---
+Step 02: Low-Fidelity Prototype & Heuristic Evaluation
+2.1 Low-Fidelity Design Spec
+The initial low-fidelity prototype was constructed as a paper sketch wireframe. It established a three-pane layout: the Monaco workspace on the left, the AI assistant chat on the right, and the execution terminal at the bottom. A floating microphone icon was placed at the top-right toolbar.
+![Figure 2.1: Low-Fidelity Paper Prototype Sketch](apcre_low_fi_sketch.png)
+Figure 2.1: Low-Fidelity Paper Prototype Sketch (APCRE IDE Dashboard Layout)
+*Figure 2.1: Low-Fidelity Paper Prototype Sketch (APCRE IDE Dashboard Layout)*
+2.2 Low-Fi Usability Evaluation Findings
+We performed a cognitive walkthrough and heuristic evaluation with our paper prototype, testing it with two SE class peers.
+Critical Usability Flaws Identified:
+Hidden Voice Triggers: The initial microphone button sketch was too small and placed in a cluttered toolbar. Users failed to find it during voice-coding tasks (violating *Aesthetic and Minimalist Design*).1.  
+Missing Terminal Cleaners: The terminal console had no clear button. Repeated test runs filled the console, forcing users to scroll endlessly (violating *User Control and Freedom*).2.  
+Redundant Execution Buttons: Separate buttons for 'Run' and 'Review' confused users who expected a unified code analysis flow (violating *Consistency and Standards*).3.  
+Iteration Plan:
+•  Redesigned the voice trigger as a large, highlighted toolbar button with active-state pulsing animations.
+•  Added a clear-terminal action button.
+•  Unified code execution and style analysis into a single compilation event.
+---
+Step 03: High-Fidelity Prototype & Usability Study
+3.1 High-Fidelity Prototype Design
+The high-fidelity prototype was built using a Next.js client featuring a sleek, dark-mode layout with tailored HSL accents. The screenshots below capture the real, functional interface screens of our project:
+•  Original Code Editor Workspace: Shows the Monaco Editor pane with a Python code sample, side-by-side with code diagnostics:
+![Figure 3.1: Original Code Editor Workspace](Original code editor.png)
+Figure 3.1: Original Code Editor Workspace (APCRE Client Workspace)
+*Figure 3.1: Original Code Editor Workspace (APCRE Client Workspace)*
+•  Original APCRE Tutor Assistant: Shows the conversational tutoring panel, concept logs, and algorithm dry-run visualizers:
+![Figure 3.2: Original APCRE Tutor Assistant](original apcre assistant.png)
+Figure 3.2: Original APCRE Tutor Assistant (AI Tutoring Interface)
+*Figure 3.2: Original APCRE Tutor Assistant (AI Tutoring Interface)*
+•  Agentic AI Autonomous Sandbox: Shows the agent control panel and autonomous self-correction logs:
+![Figure 3.3: Agentic AI Autonomous Sandbox](Agentic AI original.png)
+Figure 3.3: Agentic AI Autonomous Sandbox (Self-Correcting Coder Agent)
+*Figure 3.3: Agentic AI Autonomous Sandbox (Self-Correcting Coder Agent)*
+•  Original Course Section Hub: Shows the interactive lectures database and remote screen-sharing tutorial panels:
+![Figure 3.4: Original Course Section Hub](original course section.png)
+Figure 3.4: Original Course Section Hub (Courses Database & Peer Rooms)
+*Figure 3.4: Original Course Section Hub (Courses Database & Peer Rooms)*
+3.2 Usability Study Protocol
+We conducted a usability study with four undergraduate software engineering students (S1, S2, S3, S4) acting as subjects.
+•  Observation Method 1 (Direct Think-Aloud): Subjects narrated their thoughts while attempting to resolve a syntax error.
+•  Observation Method 2 (Interaction Logs): Logged task execution times (TET) and navigational click counts.
+•  Observation Method 3 (Post-Test Interviews): Conducted post-test evaluations of ease of use and visual comfort.
+3.3 Usability Study Findings & Analysis
+•  Observation 1: S2 was confused about whether the microphone was listening. The UI lacked clear feedback showing active recording state.
+•  Observation 2: S4 noted that while the dry-run tracing table was extremely clear, they couldn't copy the trace values to their clipboard.
+•  Weaknesses identified: Stale recording indicators and rigid text selections in details cards.
+•  Improvements Made: Integrated a dynamic audio visualizer ring that pulses green when the mic is actively recording, and added a copy-to-clipboard widget for all algorithm traces.
+---
+Step 04: Quantitative Usability Benchmarks
+The system was evaluated quantitatively across our 4 subjects for all key tasks. The results are summarized below:
+Usability Measure / Metric
+Target Baseline
+APCRE Performance
+Usability Conclusion
+Task Completion Rate (TCR)
+80%
+95.0%
+Exceeded benchmark due to intuitive click-to-heal layouts.
+System Usability Scale (SUS)
+70.0
+89.25 (Grade A)
+Reflected high user satisfaction and interface comfort.
+Error Recovery Time (ERT)
+60 seconds
+12.0 seconds
+Statically reduced due to automated code correction loops.
+Task Execution Time (TET)
+45 seconds
+18.0 seconds
+High throughput achieved through local CPU processing.
+Statistical Latency Advantage:
+Compared to cloud-based ChatGPT code reviews (which recorded an average network roundtrip latency of 1,200 ms), APCRE's local engine completed reviews in 1.8 ms, representing a statistically significant improvement in interface response time ($p < 0.05$).
+---
+Step 05: Discussion & HCI Theory
+5.1 Designing for Special Populations (Voice Coding)
+Integrating browser-based voice triggers enables hands-free coding, which breaks physical boundaries for motor-impaired students. Designing voice interactions requires strict confirmation loops to prevent accidental system executions.
+5.2 Designing for the "Paranormal" (Invisible/Ambient Interface Challenge)
+In HCI, the "paranormal" represents ambient, ghostly, or invisible background actions (like our Coder Agent recursively self-correcting errors in the background).
+•  The Paranormal Challenge: The system must maintain *Visibility of System Status* without causing cognitive overload or cluttering the user's workspace.
+•  Our Solution: We introduced an ambient status dot (pulsing yellow during background self-correction, green on success, red on failure) coupled with an expandable log panel. This gives users immediate, high-level feedback while keeping detailed technical logs hidden unless explicitly requested.
+5.3 Environmental Constraints
+Building a local, CPU-bound application meant our UI could not rely on heavy background web workers or block the main browser thread. The interface uses optimistic UI state updates and lazy-loading for heavy monaco packages to maintain a high-refresh rendering pipeline under low hardware conditions.

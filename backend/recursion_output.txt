@@ -1,0 +1,2 @@
+Fibonacci(6) result: 8
+Status: SUCCESS (Recursive call resolved offline)

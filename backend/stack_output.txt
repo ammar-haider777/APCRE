@@ -1,0 +1,3 @@
+Stack structure verified successfully!
+Popped item: 30
+Remaining items count: 2

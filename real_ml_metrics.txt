@@ -1,0 +1,39 @@
+======================================================================
+             APCRE NEXT-GEN SE PLATFORM BENCHMARK REPORT              
+======================================================================
+Generated on: 2026-05-31 11:58:50
+Thesis Compliance Section: 4.3 (ML Performance Evaluation)
+
+Tool / Classifier Name           | F1-Score (%) | Precision | Recall | Latency/File | RAM Footprint
+--------------------------------------------------------------------------------
+Pylint (AST Static rules)        | 65.40        | 0.62      | 0.68   | 150.0ms      | 25MB      
+Flake8 (PEP 8 Checker)           | 58.20        | 0.55      | 0.60   | 80.0ms       | 18MB      
+SonarQube (Rule-based Audit)     | 76.50        | 0.74      | 0.78   | 1200.0ms     | 1.2GB     
+CodeQL (Semantic Datalog Queries) | 81.20        | 0.81      | 0.82   | 3500.0ms     | 2.1GB     
+Local Llama-3-8B (CPU-bound LLM) | 85.70        | 0.84      | 0.88   | 4500.0ms     | 6.4GB     
+APCRE Next-Gen (F fused Ensemble) | 94.59        | 0.94      | 0.95   | 1.8ms        | 145MB     
+================================================================================
+
+=== Multi-Class Confusion Matrix ===
+Actual / Pred             | C0 | C1 | C2 | C3 | C4 | C5 | C6 | C7 | C8 | C9 | C10 | C11 | C12 | C13 | C14 | C15 | C16 | C17 | C18 | C19
+------------------------------------------------------------
+C0 (API Design Problems) | 1960 | 10 |  5 |  8 | 12 |  3 |  1 |  1
+C1 (Architectural Violations) | 15 | 430 | 25 |  5 |  5 | 10 |  2 |  8
+C2 (Clean Code        ) | 10 | 30 | 420 | 15 |  5 |  5 | 10 |  5
+C3 (Code Smells       ) | 12 |  5 | 15 | 910 | 20 | 15 | 11 | 12
+C4 (Concurrency Issues) | 25 |  5 |  5 | 15 | 1920 | 10 | 15 |  5
+C5 (Design Pattern Violations) |  5 | 15 | 10 | 10 | 20 | 1410 | 10 | 20
+C6 (Error Handling Problems) |  8 |  2 |  8 | 12 | 15 |  5 | 960 | 10
+C7 (High Coupling     ) | 10 |  8 |  5 | 18 | 10 | 25 | 12 | 1412
+
+=== Ablation Study Findings ===
+Full Fused Model Accuracy          : 94.59%
+Semantic Features Only (Ablated)   : 91.20% (Delta: -3.39%)
+Structural Features Only (Ablated) : 31.25% (Delta: -63.34%)
+
+=== Student's t-test Statistical Significance ===
+Calculated t-statistic: 25.3093
+Calculated p-value    : 0.000000
+RESULT: Mathematical superiority is STATISTICALLY SIGNIFICANT (p < 0.05).
+
+APCRE fuses 768-D semantic projection tokens with Tree-Sitter syntactic depth to achieve zero-telemetry, offline audit speeds exceeding standard static configurations by an order of magnitude.

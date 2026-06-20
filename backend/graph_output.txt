@@ -1,0 +1,2 @@
+Undirected Graph represented successfully!
+Adjacency Map: {'A': ['B', 'C'], 'B': ['A'], 'C': ['A']}
