@@ -743,10 +743,25 @@ function VideoPlayer({ stream, muted = false, className }) {
 
   useEffect(() => {
     if (videoRef.current && stream) {
+      const updateStream = () => {
+        if (videoRef.current) {
+          videoRef.current.srcObject = stream;
+        }
+      };
+
       videoRef.current.srcObject = stream;
       videoRef.current.play().catch((err) => {
         console.warn("Autoplay blocked or video playback failed:", err);
       });
+
+      // Listen to dynamic track additions/removals inside the stream
+      stream.addEventListener("addtrack", updateStream);
+      stream.addEventListener("removetrack", updateStream);
+
+      return () => {
+        stream.removeEventListener("addtrack", updateStream);
+        stream.removeEventListener("removetrack", updateStream);
+      };
     }
   }, [stream]);
 
@@ -3398,7 +3413,8 @@ export default function App() {
           pc.ontrack = (event) => {
             logMeet("Remote track received!");
             if (event.streams && event.streams[0]) {
-              setRemoteStream(event.streams[0]);
+              // Create a new MediaStream instance to trigger React reference updates
+              setRemoteStream(new MediaStream(event.streams[0].getTracks()));
             }
           };
 
@@ -3840,7 +3856,8 @@ export default function App() {
     pc.ontrack = (event) => {
       logMeet("Remote track received from peer!");
       if (event.streams && event.streams[0]) {
-        setRemoteStream(event.streams[0]);
+        // Create a new MediaStream instance to trigger React reference updates
+        setRemoteStream(new MediaStream(event.streams[0].getTracks()));
       }
     };
 
