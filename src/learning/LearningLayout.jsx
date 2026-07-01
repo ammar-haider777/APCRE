@@ -25,7 +25,7 @@ export default function LearningLayout() {
           starterCode: "# Create variable 'x' and print it below\n",
           solutionCode: "x = 10\nprint(x)",
           expectedOutput: "10",
-          videoUrl: "https://www.youtube.com/embed/kqtD5dpn9C8"
+          videoUrl: "https://www.youtube.com/embed/kqtD5dpn9C8?start=330"
         },
         {
           id: 2,
@@ -36,7 +36,7 @@ export default function LearningLayout() {
           starterCode: "# Write code below to print the product of 7 and 8\n",
           solutionCode: "print(7 * 8)",
           expectedOutput: "56",
-          videoUrl: "https://www.youtube.com/embed/khKvIO-G4kU"
+          videoUrl: "https://www.youtube.com/embed/kqtD5dpn9C8?start=1421"
         },
         {
           id: 3,
@@ -47,7 +47,7 @@ export default function LearningLayout() {
           starterCode: "# Concatenate 'Python' and 'Developer' with a space and print it\n",
           solutionCode: "print(\"Python\" + \" \" + \"Developer\")",
           expectedOutput: "Python Developer",
-          videoUrl: "https://www.youtube.com/embed/kqtD5dpn9C8"
+          videoUrl: "https://www.youtube.com/embed/kqtD5dpn9C8?start=1129"
         },
         {
           id: 4,
@@ -58,7 +58,7 @@ export default function LearningLayout() {
           starterCode: "# Create list 'colors' and print the item at index 1\n",
           solutionCode: "colors = [\"red\", \"green\", \"blue\"]\nprint(colors[1])",
           expectedOutput: "green",
-          videoUrl: "https://www.youtube.com/embed/W8KRzm-HUcc"
+          videoUrl: "https://www.youtube.com/embed/kqtD5dpn9C8?start=2711"
         },
         {
           id: 5,
@@ -69,7 +69,7 @@ export default function LearningLayout() {
           starterCode: "# Define score = 85 and write an if-else statement to print Pass/Fail\n",
           solutionCode: "score = 85\nif score > 80:\n    print(\"Pass\")\nelse:\n    print(\"Fail\")",
           expectedOutput: "Pass",
-          videoUrl: "https://www.youtube.com/embed/DZwmZ8UqEQQ"
+          videoUrl: "https://www.youtube.com/embed/kqtD5dpn9C8?start=1866"
         },
         {
           id: 6,
@@ -80,7 +80,7 @@ export default function LearningLayout() {
           starterCode: "# Create list 'numbers' and write a for loop to print item 1, item 2, etc.\n",
           solutionCode: "numbers = [1, 2, 3]\nfor n in numbers:\n    print(\"item \" + str(n))",
           expectedOutput: "item 1\nitem 2\nitem 3",
-          videoUrl: "https://www.youtube.com/embed/6iF8Xb7Z3wQ"
+          videoUrl: "https://www.youtube.com/embed/kqtD5dpn9C8?start=3136"
         },
         {
           id: 7,
@@ -91,7 +91,7 @@ export default function LearningLayout() {
           starterCode: "# Define the greet function and call it passing 'Ammar' below\n",
           solutionCode: "def greet(name):\n    print(\"Hello \" + name)\n\ngreet(\"Ammar\")",
           expectedOutput: "Hello Ammar",
-          videoUrl: "https://www.youtube.com/embed/9Os0o3wzS_I"
+          videoUrl: "https://www.youtube.com/embed/rfscVS0vtbw?start=5055"
         },
         {
           id: 8,
@@ -102,7 +102,7 @@ export default function LearningLayout() {
           starterCode: "# Create 'user_profile' dictionary and print the value of 'username' below\n",
           solutionCode: "user_profile = {\n    \"username\": \"Ammar\",\n    \"role\": \"Developer\"\n}\nprint(user_profile[\"username\"])",
           expectedOutput: "Ammar",
-          videoUrl: "https://www.youtube.com/embed/daefaL5Nq7k"
+          videoUrl: "https://www.youtube.com/embed/rfscVS0vtbw?start=7637"
         }
       ]
     },
@@ -119,7 +119,7 @@ export default function LearningLayout() {
           starterCode: "# Import numpy as np and print the array [10, 20, 30]\n",
           solutionCode: "import numpy as np\narr = np.array([10, 20, 30])\nprint(arr)",
           expectedOutput: "[10 20 30]",
-          videoUrl: "https://www.youtube.com/embed/GB9ByJvsuLI"
+          videoUrl: "https://www.youtube.com/embed/GB9ByFAIAH4"
         },
         {
           id: 2,
@@ -130,7 +130,7 @@ export default function LearningLayout() {
           starterCode: "# Print 'Model Trained'\n",
           solutionCode: "print(\"Model Trained\")",
           expectedOutput: "Model Trained",
-          videoUrl: "https://www.youtube.com/embed/7eh4d6sabA0"
+          videoUrl: "https://www.youtube.com/embed/E0Hmnixke2g"
         }
       ]
     },
@@ -147,7 +147,7 @@ export default function LearningLayout() {
           starterCode: "# Create class MyClass and print instance's x property\n",
           solutionCode: "class MyClass:\n  x = 5\n\np = MyClass()\nprint(p.x)",
           expectedOutput: "5",
-          videoUrl: "https://www.youtube.com/embed/ZDa-Z5JzLYM"
+          videoUrl: "https://www.youtube.com/embed/rfscVS0vtbw?start=13436"
         },
       ],
     },

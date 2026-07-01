@@ -6,13 +6,15 @@ import { ChevronDown } from "lucide-react";
 
 export default function Header() {
   const [user, setUser] = useState(null);
-  const navigate = useRouter();
+  const [avatarFailed, setAvatarFailed] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const loadUser = () => {
       const stored = localStorage.getItem("user");
       if (stored) {
         setUser(JSON.parse(stored));
+        setAvatarFailed(false);
       } else {
         setUser(null);
       }
@@ -25,7 +27,7 @@ export default function Header() {
   const handleLogout = () => {
     localStorage.removeItem("user");
     setUser(null);
-    navigate("/");
+    router.push("/");
   };
 
   return (
@@ -58,7 +60,18 @@ export default function Header() {
               </button>
             </Link>
             <div className="flex items-center space-x-2 cursor-pointer group" onClick={handleLogout} title="Click to logout">
-              <img src={user.avatar} alt="Avatar" className="w-8 h-8 rounded-full border-2 border-slate-700 shadow-sm object-cover group-hover:opacity-80 transition-opacity" />
+              {!avatarFailed && user.avatar ? (
+                <img 
+                  src={user.avatar} 
+                  alt="Avatar" 
+                  onError={() => setAvatarFailed(true)}
+                  className="w-8 h-8 rounded-full border-2 border-slate-700 shadow-sm object-cover group-hover:opacity-80 transition-opacity" 
+                />
+              ) : (
+                <div className="w-8 h-8 rounded-full border-2 border-slate-700 bg-blue-600 flex items-center justify-center text-white text-xs font-bold uppercase group-hover:bg-blue-700 transition-colors shadow-sm">
+                  {user.firstName ? user.firstName.charAt(0) : "U"}
+                </div>
+              )}
             </div>
           </div>
         ) : (

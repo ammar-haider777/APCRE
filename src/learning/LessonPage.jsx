@@ -401,7 +401,7 @@ export default function LessonPage({ lesson, onBack, onComplete, hasNextLesson, 
             }}
             className="mt-4 bg-blue-600 text-white font-extrabold uppercase font-mono tracking-wider text-xs px-6 py-3 rounded-xl hover:bg-blue-700 shadow-md hover:shadow-lg transition duration-300 w-full"
           >
-            🚀 Start Challenge Editor
+            Start Challenge Editor
           </button>
         )}
 
@@ -597,7 +597,7 @@ export default function LessonPage({ lesson, onBack, onComplete, hasNextLesson, 
               onClick={submitCode}
               disabled={loading || submitStatus === "submitted"}
             >
-              {submitStatus === "submitted" ? "✓ Submitted" : "▶ Submit"}
+              {submitStatus === "submitted" ? "✓ Submitted" : "Submit"}
             </button>
 
             {submitStatus === "submitted" && hasNextLesson && (
@@ -623,7 +623,7 @@ export default function LessonPage({ lesson, onBack, onComplete, hasNextLesson, 
               onClick={runCode}
               disabled={loading}
             >
-              ▶ Run
+              Run
             </button>
 
             <button
@@ -633,7 +633,7 @@ export default function LessonPage({ lesson, onBack, onComplete, hasNextLesson, 
                 setSubmitStatus("submit");
               }}
             >
-              👁 Solution
+              Solution
             </button>
 
             <button

@@ -2423,14 +2423,27 @@ export default function App() {
   // Handle and bypass Monaco cancellation unhandled rejections to prevent Next.js dev overlay
   useEffect(() => {
     const handleUnhandledRejection = (event) => {
-      if (
-        event.reason && 
-        (event.reason.type === "cancelation" || 
-         event.reason.message === "Canceled" ||
-         (typeof event.reason === "object" && event.reason.msg === "operation is manually canceled"))
-      ) {
+      const reason = event.reason;
+      if (!reason) return;
+
+      const isMonacoCancel = 
+        reason.type === "cancelation" || 
+        reason.type === "cancellation" ||
+        reason.message === "Canceled" ||
+        reason.message === "Cancelled" ||
+        reason.name === "CancelationError" ||
+        reason.name === "CancellationError" ||
+        reason.isCancellationError === true ||
+        (typeof reason === "object" && (
+          reason.msg === "operation is manually canceled" ||
+          (reason.message && reason.message.includes("Canceled")) ||
+          (Object.keys(reason).length === 0 && reason.constructor === Object)
+        ));
+
+      if (isMonacoCancel) {
         event.preventDefault();
         event.stopPropagation();
+        event.stopImmediatePropagation();
       }
     };
 
@@ -2439,6 +2452,7 @@ export default function App() {
       window.removeEventListener("unhandledrejection", handleUnhandledRejection);
     };
   }, []);
+
 
   const [files, setFiles] = useState([]);
   const [selectedFile, setSelectedFile] = useState(null);

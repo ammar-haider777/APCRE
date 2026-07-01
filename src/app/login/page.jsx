@@ -12,7 +12,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const navigate = useRouter();
+  const router = useRouter();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -31,7 +31,7 @@ export default function LoginPage() {
 
       localStorage.setItem('user', JSON.stringify(result.user));
       window.dispatchEvent(new Event('user-login'));
-      navigate('/editor');
+      router.push('/editor');
     } catch (err) {
       setError(err.message);
     } finally {

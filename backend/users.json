@@ -16,5 +16,23 @@
     "password": "12345",
     "progress": [],
     "avatar": "https://ui-avatars.com/api/?name=xyzap%20cc&background=random"
+  },
+  {
+    "id": "1782636843951",
+    "firstName": "Ammar",
+    "lastName": "Haider",
+    "email": "ammar@apcre.dev",
+    "password": "$2b$10$Ji43rRonc5YWc7xmt3McRu/FnTAcIhVFO1kVhGx7SpPUc3vCdMvqm",
+    "progress": [],
+    "avatar": "https://ui-avatars.com/api/?name=Ammar%20Haider&background=random"
+  },
+  {
+    "id": "1782637234018",
+    "firstName": "xyz",
+    "lastName": "okkkkk",
+    "email": "xyz@apcre.dev",
+    "password": "$2b$10$oLmIPNr6l555MT593pZGR.kozA3CODiYYt58mt0D43vJ0bcxU/SAa",
+    "progress": [],
+    "avatar": "/avatars/1782637233756.png"
   }
 ]

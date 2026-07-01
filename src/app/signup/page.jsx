@@ -17,7 +17,7 @@ export default function SignupPage() {
   const [avatar, setAvatar] = useState(null);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const navigate = useRouter();
+  const router = useRouter();
 
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files.length > 0) {
@@ -49,7 +49,7 @@ export default function SignupPage() {
       if (!res.ok) throw new Error(result.error || 'Signup failed');
 
       localStorage.setItem('user', JSON.stringify(result.user));
-      navigate('/editor');
+      router.push('/editor');
     } catch (err) {
       setError(err.message);
     } finally {
